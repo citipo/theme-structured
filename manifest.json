@@ -1,0 +1,18 @@
+{
+    "name": {
+        "en": "Structured",
+        "fr": "Structuré"
+    },
+    "description": {
+        "en": "The main image is displayed in full width. The buttons and the slogan are displayed on top of it. The logo and the menu are integrated in an independant banner.",
+        "fr": "L'image principale est affichée sur toute la largeur de l'écran. Les boutons et le slogan sont affichés par dessus. Le logo et le menu sont intégrés dans un bandeau indépendant."
+    },
+    "thumbnail": "thumbnail.jpg",
+    "templates": {
+        "style": "src/style.css.twig",
+        "head": "src/head.html.twig",
+        "home": "src/home.html.twig",
+        "list": "src/list.html.twig",
+        "content": "src/content.html.twig"
+    }
+}
