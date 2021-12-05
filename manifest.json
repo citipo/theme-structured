@@ -7,12 +7,25 @@
         "en": "The main image is displayed in full width. The buttons and the slogan are displayed on top of it. The logo and the menu are integrated in an independant banner.",
         "fr": "L'image principale est affichée sur toute la largeur de l'écran. Les boutons et le slogan sont affichés par dessus. Le logo et le menu sont intégrés dans un bandeau indépendant."
     },
+    "defaultColors": {
+        "primary": "0F345C",
+        "secondary": "E83A7F",
+        "third": "2A568E"
+    },
+    "defaultFonts": {
+        "title": "Merriweather Sans",
+        "text": "Merriweather Sans"
+    },
     "thumbnail": "thumbnail.jpg",
     "templates": {
         "style": "src/style.css.twig",
+        "script": "src/script.js.twig",
         "head": "src/head.html.twig",
         "home": "src/home.html.twig",
         "list": "src/list.html.twig",
         "content": "src/content.html.twig"
-    }
+    },
+    "assets": [
+        "assets/home-default.jpg"
+    ]
 }
