@@ -1,6 +1,14 @@
 <div class="home">
     <div class="home-jumbo"
          style="background-image: url('{{ jumbo_image|default(citipo_theme_asset_url('assets/home-default.jpg')) }}');">
+        {% if jumbo_video %}
+            <div class="home-jumbo-video">
+                <video autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline">
+                    <source src="{{ jumbo_video }}" type="video/mp4">
+                </video>
+            </div>
+        {% endif %}
+
         {% if jumbo_overlay %}
             <div class="home-jumbo-overlay"></div>
         {% endif %}
