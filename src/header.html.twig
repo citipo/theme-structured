@@ -5,7 +5,7 @@
 
                 {# Logo #}
                 <div class="col-9 col-lg-auto">
-                    <a href="{{ homepage_url }}">
+                    <a href="{{ homepage_url }}" data-turbo="optional">
                         {% if project.logoDark %}
                             <img src="{{ project.logoDark }}"
                                  class="header-logo header-logo-dark" />
@@ -41,7 +41,7 @@
                             {% for item in project.header %}
                                 <li>
                                     <div class="header-menu-label">
-                                        <a href="{{ item.url }}"
+                                        <a href="{{ item.url }}" data-turbo="optional"
                                            {% if item.openNewTab %}target="_blank" rel="noopener noreferrer"{% endif %}>
                                             {{ item.label }}
                                         </a>
@@ -56,7 +56,7 @@
                                             <ul>
                                                 {% for child in item.children %}
                                                     <li>
-                                                        <a href="{{ child.url }}"
+                                                        <a href="{{ child.url }}" data-turbo="optional"
                                                            {% if child.openNewTab %}target="_blank" rel="noopener noreferrer"{% endif %}>
                                                             {{ child.label }}
                                                         </a>
@@ -71,7 +71,7 @@
                             {% if 'members_area_account' in project.tools %}
                                 <li data-target="menu.anonymous">
                                     <div class="header-menu-label">
-                                        <a href="{{ membership.login_url }}">
+                                        <a href="{{ membership.login_url }}" data-turbo="optional">
                                             {{ project.terminology.membershipLogin }}
                                         </a>
                                     </div>
@@ -79,7 +79,7 @@
 
                                 <li class="mb-2 mb-lg-0" style="display: none" data-target="menu.loggedin">
                                     <div class="header-menu-label">
-                                        <a href="{{ membership.area_url }}">
+                                        <a href="{{ membership.area_url }}" data-turbo="optional">
                                             <span data-target="menu.fullname">{{ project.terminology.membershipLogin }}</span>
                                         </a>
                                         <i class="fal fa-angle-down"></i>
@@ -88,17 +88,17 @@
                                     <div class="header-menu-submenu text-left">
                                         <ul>
                                             <li>
-                                                <a href="{{ membership.area_url }}">
+                                                <a href="{{ membership.area_url }}" data-turbo="optional">
                                                     {{ project.terminology.membershipArea }}
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="{{ membership.account_url }}">
+                                                <a href="{{ membership.account_url }}" data-turbo="optional">
                                                     {{ membership.account_label }}
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="{{ membership.logout_url }}">
+                                                <a href="{{ membership.logout_url }}" data-turbo="optional">
                                                     {{ membership.logout_label }}
                                                 </a>
                                             </li>
@@ -117,8 +117,8 @@
                         <ul class="header-mobile">
                             {% for item in project.header %}
                                 <li>
-                                    <a href="{{ item.url }}" {% if item.openNewTab %}target="_blank"
-                                       rel="noopener noreferrer"{% endif %}>
+                                    <a href="{{ item.url }}" data-turbo="optional"
+                                       {% if item.openNewTab %}target="_blank" rel="noopener noreferrer"{% endif %}>
                                         {{ item.label }}
                                     </a>
 
@@ -127,7 +127,7 @@
                                             <ul>
                                                 {% for child in item.children %}
                                                     <li>
-                                                        <a href="{{ child.url }}"
+                                                        <a href="{{ child.url }}" data-turbo="optional"
                                                            {% if child.openNewTab %}target="_blank"
                                                            rel="noopener noreferrer"{% endif %}>
                                                             {{ child.label }}

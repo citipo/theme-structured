@@ -1,4 +1,4 @@
-<div class="manifesto manifesto-topics">
+<div class="manifesto manifesto-topics" data-aos="fade-up" data-aos-duration="600">
     <h1 class="manifesto-topics-title">
         {{ manifesto_title }}
     </h1>
@@ -11,7 +11,7 @@
         <div class="row justify-content-center">
             {% for topic in manifesto %}
                 <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <a href="{{ topic.url }}"
+                    <a href="{{ topic.url }}" data-turbo="optional"
                        class="manifesto-topics-list-item"
                        style="background-color: {{ topic.backgroundColor }}; color: #{{ topic.color }};">
                         <div class="manifesto-topics-list-item-image"

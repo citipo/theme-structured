@@ -1,4 +1,4 @@
-<div class="splash p-0">
+<div class="splash p-0" data-aos="fade-up" data-aos-duration="600">
     <div class="container">
         <div class="row no-gutters align-items-center">
             <div class="{% if video|default(null) or image|default(null) %}col-lg-6{% else %}col-lg-12{% endif %}">
@@ -6,7 +6,7 @@
                     {% if section_name|default(null) %}
                         <h3 class="splash-section mb-3">
                             {% if section_url|default(null) %}
-                                <a href="{{ section_url }}">
+                                <a href="{{ section_url }}" data-turbo="optional">
                                     {{ section_name }}
                                 </a>
                             {% else %}
@@ -60,9 +60,8 @@
     </div>
 </div>
 
-
 <div class="content">
-    <div class="content-splash">
+    <div class="content-splash" data-aos="fade-up" data-aos-duration="600">
         {% if previewing_text|default(null) %}
             <div class="content-splash-previewing">
                 {{ previewing_text }}
@@ -80,54 +79,55 @@
                 {% if categories|default([])|length > 0 %}
                     <div class="content-splash-metadata-categories">
                         {% for name, url in categories %}
-                            <a href="{{ url }}">{{ name }}</a>
+                            <a href="{{ url }}" data-turbo="optional">{{ name }}</a>
                         {% endfor %}
                     </div>
                 {% endif %}
             </div>
         {% endif %}
-
     </div>
 
-    <div class="content-publication">
+    <div class="content-publication" data-aos="fade-up" data-aos-duration="600">
         {{ content|raw }}
     </div>
 
     {% if more|default([])|length > 0 %}
-        <div class="content-more">
+        <div class="content-more" data-aos="fade-up" data-aos-duration="600">
             <div class="row justify-content-center">
                 {% for other in more|default([]) %}
                     <div class="col-12 col-md-6 col-lg-4">
-                        <div class="content-more-item box-offset">
-                            <div class="content-more-item-thumbnail">
-                                {% if other.video|default(null) %}
-                                    <div class="list-items-item-video"
-                                         style="background-image: url('https://i1.ytimg.com/vi/{{ other.video[1] }}/hqdefault.jpg')">
-                                        <div class="list-items-item-video-icon"
-                                             style="background: url('{{ play_icon }}') 50% 50% no-repeat transparent">
-                                            <div class="list-items-item-video-inner" style="width: 1110px; height: 705px"></div>
+                        <div class="zoom-hover">
+                            <div class="content-more-item box-offset">
+                                <div class="content-more-item-thumbnail">
+                                    {% if other.video|default(null) %}
+                                        <div class="list-items-item-video"
+                                             style="background-image: url('https://i1.ytimg.com/vi/{{ other.video[1] }}/hqdefault.jpg')">
+                                            <div class="list-items-item-video-icon"
+                                                 style="background: url('{{ play_icon }}') 50% 50% no-repeat transparent">
+                                                <div class="list-items-item-video-inner" style="width: 1110px; height: 705px"></div>
+                                            </div>
                                         </div>
-                                    </div>
-                                {% else %}
-                                    <img src="{{ other.image|default(default_list_image) }}"
-                                         class="list-items-item-image" width="1700" height="1080" />
-                                {% endif %}
-                            </div>
-
-                            <a href="{{ other.url }}" class="stretched-link list-items-item-link">
-                                <h5 class="list-items-item-title">
-                                    <span>{{ other.title }}</span>
-                                </h5>
-                            </a>
-
-                            {% if other.date|default(null) %}
-                                <div class="list-items-item-date">
-                                    {{ other.date }}
+                                    {% else %}
+                                        <img src="{{ other.image|default(default_list_image) }}"
+                                             class="list-items-item-image" width="1700" height="1080" />
+                                    {% endif %}
                                 </div>
-                            {% endif %}
 
-                            <div class="list-items-item-description">
-                                {{ other.description }}
+                                <a href="{{ other.url }}" class="stretched-link list-items-item-link" data-turbo="optional">
+                                    <h5 class="list-items-item-title">
+                                        <span>{{ other.title }}</span>
+                                    </h5>
+                                </a>
+
+                                {% if other.date|default(null) %}
+                                    <div class="list-items-item-date">
+                                        {{ other.date }}
+                                    </div>
+                                {% endif %}
+
+                                <div class="list-items-item-description">
+                                    {{ other.description }}
+                                </div>
                             </div>
                         </div>
                     </div>

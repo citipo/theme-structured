@@ -1,4 +1,4 @@
-<div class="trombinoscope trombinoscope-persons">
+<div class="trombinoscope trombinoscope-persons" data-aos="fade-up" data-aos-duration="600">
     <h1 class="trombinoscope-persons-title">
         {{ trombinoscope_title }}
     </h1>
@@ -9,7 +9,7 @@
 
     <div class="trombinoscope-persons-grid">
         {% for key, person in trombinoscope %}
-            <a href="{{ person.url }}"
+            <a href="{{ person.url }}" data-turbo="optional"
                class="trombinoscope-persons-grid-item"
                {% if person.image %}style="background-image: url('{{ person.image }}');"{% endif %}>
                 <h3 class="trombinoscope-persons-grid-item-name">

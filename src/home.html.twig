@@ -20,16 +20,16 @@
 
     <div class="home-intro">
         <div class="home-intro-view">
-            <h2>
+            <h2 data-aos="fade-up" data-aos-duration="600">
                 {{ jumbo_title }}
             </h2>
 
-            <p>
+            <p data-aos="fade-up" data-aos-duration="600">
                 {{ jumbo_content|raw }}
             </p>
 
             {% if jumbo_position != 'center' and blocks[0] is defined and blocks[0].type == 'cta' %}
-                <div class="home-buttons">
+                <div class="home-buttons" data-aos="fade-up" data-aos-duration="600">
                     {{ blocks[0].content|raw }}
                 </div>
             {% endif %}
@@ -37,7 +37,7 @@
     </div>
 
     {% if jumbo_position == 'center' and blocks[0] is defined and blocks[0].type == 'cta' %}
-        <div class="home-buttons">
+        <div class="home-buttons" data-aos="fade-up" data-aos-duration="600">
             {{ blocks[0].content|raw }}
         </div>
     {% endif %}

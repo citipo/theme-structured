@@ -1,6 +1,6 @@
-<div class="home-blocks-block home-blocks-block-cta">
+<div class="home-blocks-block home-blocks-block-cta" data-aos="fade-up" data-aos-duration="600">
     {% if primary.label %}
-        <a href="{{ primary.target }}"
+        <a href="{{ primary.target }}" data-turbo="optional"
            class="home-blocks-block-cta-button home-blocks-block-cta-primary"
            {% if primary.openNewTab %}target="_blank" rel="noopener noreferrer"{% endif %}>
             {{ primary.label }}
@@ -8,7 +8,7 @@
     {% endif %}
 
     {% if secondary.label %}
-        <a href="{{ secondary.target }}"
+        <a href="{{ secondary.target }}" data-turbo="optional"
            class="home-blocks-block-cta-button home-blocks-block-cta-secondary"
            {% if secondary.openNewTab %}target="_blank" rel="noopener noreferrer"{% endif %}>
             {{ secondary.label }}

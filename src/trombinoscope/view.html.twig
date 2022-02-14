@@ -1,6 +1,6 @@
-<div class="trombinoscope trombinoscope-person">
+<div class="trombinoscope trombinoscope-person" data-aos="fade-up" data-aos-duration="600">
     <div class="trombinoscope-person-section">
-        <a href="{{ trombinoscope_url }}">
+        <a href="{{ trombinoscope_url }}" data-turbo="optional">
             {{ trombinoscope_title }}
         </a>
     </div>
@@ -17,7 +17,7 @@
         <div class="row align-items-center">
             <div class="col-12 col-md-6 mb-2">
                 {% if person.previous %}
-                    <a href="{{ person.previous.url }}"
+                    <a href="{{ person.previous.url }}" data-turbo="optional"
                        class="d-inline-block px-4 py-3"
                        style="background: {{ background_color }}; color: {{ foreground_color }}">
                         ⟵ {{ person.previous.fullName }}
@@ -26,7 +26,7 @@
             </div>
             <div class="col-12 col-md-6 mb-2 text-right">
                 {% if person.next %}
-                    <a href="{{ person.next.url }}"
+                    <a href="{{ person.next.url }}" data-turbo="optional"
                        class="d-inline-block px-4 py-3"
                        style="background: {{ background_color }}; color: {{ foreground_color }}">
                         {{ person.next.fullName }} ⟶
