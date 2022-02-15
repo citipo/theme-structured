@@ -78,22 +78,20 @@
         </div>
 
         {% if categories|default([])|length > 0 %}
-            <div data-aos="fade-up" data-aos-duration="600">
-                <div class="list-categories">
-                    <h4 class="list-categories-title">
-                        {{ 'base.categories'|trans }}
-                    </h4>
+            <div class="list-categories" data-aos="fade-up" data-aos-duration="600">
+                <h4 class="list-categories-title">
+                    {{ 'base.categories'|trans }}
+                </h4>
 
-                    <div class="list-categories-items">
-                        {% for category in categories %}
-                            <div class="list-categories-item">
-                                <a href="{{ category.url }}" data-turbo="optional"
-                                   class="list-categories-item-link {{ category.isActive ? 'list-categories-item-link-active' }}">
-                                    {{ category.name }}
-                                </a>
-                            </div>
-                        {% endfor %}
-                    </div>
+                <div class="list-categories-items">
+                    {% for category in categories %}
+                        <div class="list-categories-item">
+                            <a href="{{ category.url }}" data-turbo="optional"
+                               class="list-categories-item-link {{ category.isActive ? 'list-categories-item-link-active' }}">
+                                {{ category.name }}
+                            </a>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         {% endif %}
