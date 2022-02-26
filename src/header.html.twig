@@ -6,15 +6,15 @@
                 {# Logo #}
                 <div class="col-9 col-lg-auto">
                     <a href="{{ homepage_url }}" data-turbo="optional">
-                        {% if project.logoDark %}
-                            <img src="{{ project.logoDark }}"
+                        {% if current_project.logoDark %}
+                            <img src="{{ current_project.logoDark }}"
                                  class="header-logo header-logo-dark" />
 
-                            <img src="{{ project.logoWhite|default(project.logoDark) }}"
+                            <img src="{{ current_project.logoWhite|default(current_project.logoDark) }}"
                                  class="header-logo header-logo-white" />
                         {% else %}
                             <h1 class="header-title">
-                                {{ project.metaTitle|default(project.name) }}
+                                {{ current_project.metaTitle|default(current_project.name) }}
                             </h1>
                         {% endif %}
                     </a>
@@ -38,7 +38,7 @@
                         <ul class="header-menu"
                             data-controller="menu"
                             data-cookie="{{ membership.cookie_name }}">
-                            {% for item in project.header %}
+                            {% for item in current_project.header %}
                                 <li>
                                     <div class="header-menu-label">
                                         <a href="{{ item.url }}" data-turbo="optional"
@@ -68,11 +68,11 @@
                                 </li>
                             {% endfor %}
 
-                            {% if 'members_area_account' in project.tools %}
+                            {% if 'members_area_account' in current_project.tools %}
                                 <li data-target="menu.anonymous">
                                     <div class="header-menu-label">
                                         <a href="{{ membership.login_url }}" data-turbo="optional">
-                                            {{ project.terminology.membershipLogin }}
+                                            {{ current_project.terminology.membershipLogin }}
                                         </a>
                                     </div>
                                 </li>
@@ -80,7 +80,7 @@
                                 <li class="mb-2 mb-lg-0" style="display: none" data-target="menu.loggedin">
                                     <div class="header-menu-label">
                                         <a href="{{ membership.area_url }}" data-turbo="optional">
-                                            <span data-target="menu.fullname">{{ project.terminology.membershipLogin }}</span>
+                                            <span data-target="menu.fullname">{{ current_project.terminology.membershipLogin }}</span>
                                         </a>
                                         <i class="fal fa-angle-down"></i>
                                     </div>
@@ -89,7 +89,7 @@
                                         <ul>
                                             <li>
                                                 <a href="{{ membership.area_url }}" data-turbo="optional">
-                                                    {{ project.terminology.membershipArea }}
+                                                    {{ current_project.terminology.membershipArea }}
                                                 </a>
                                             </li>
                                             <li>
@@ -115,7 +115,7 @@
                      data-mobile-menu-target="menu">
                     <nav class="menu">
                         <ul class="header-mobile">
-                            {% for item in project.header %}
+                            {% for item in current_project.header %}
                                 <li>
                                     <a href="{{ item.url }}" data-turbo="optional"
                                        {% if item.openNewTab %}target="_blank" rel="noopener noreferrer"{% endif %}>

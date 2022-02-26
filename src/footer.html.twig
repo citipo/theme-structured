@@ -4,11 +4,11 @@
             <div class="row align-items-center justify-content-between">
                 <div class="col-lg-auto footer-top-logo">
                     <a href="{{ homepage_url }}" data-turbo="optional">
-                        {% if project.logoDark %}
-                            <img src="{{ project.logoDark }}" class="footer-top-logo-image" />
+                        {% if current_project.logoDark %}
+                            <img src="{{ current_project.logoDark }}" class="footer-top-logo-image" />
                         {% else %}
                             <h1 class="footer-top-logo-text">
-                                {{ project.metaTitle|default(project.name) }}
+                                {{ current_project.metaTitle|default(current_project.name) }}
                             </h1>
                         {% endif %}
                     </a>
@@ -33,7 +33,7 @@
                     } %}
 
                     {% for platform, config in platforms %}
-                        {% set url = attribute(project.socials, platform) %}
+                        {% set url = attribute(current_project.socials, platform) %}
 
                         {% if url %}
                             {% if platform == 'telegram' %}
@@ -57,7 +57,7 @@
     <div class="footer-menu">
         <div class="container">
             <div class="row justify-content-center">
-                {% for item in project.footer %}
+                {% for item in current_project.footer %}
                     <div class="col-12 col-md-4 col-lg-2 footer-menu-column">
                         <a href="{{ item.url }}" class="footer-menu-column-title" data-turbo="optional"
                            {% if item.openNewTab %}target="_blank" rel="noopener noreferrer"{% endif %}>
