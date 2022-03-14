@@ -2,6 +2,9 @@
     {% if primary.label %}
         <a href="{{ primary.target }}" data-turbo="optional"
            class="home-blocks-block-cta-button home-blocks-block-cta-primary"
+           data-controller="citipo-customevent"
+           data-citipo-customevent-event-value="home-cta-secondary-click"
+           data-action="citipo-customevent#trigger"
            {% if primary.openNewTab %}target="_blank" rel="noopener noreferrer"{% endif %}>
             {{ primary.label }}
         </a>
@@ -10,6 +13,9 @@
     {% if secondary.label %}
         <a href="{{ secondary.target }}" data-turbo="optional"
            class="home-blocks-block-cta-button home-blocks-block-cta-secondary"
+           data-controller="citipo-customevent"
+           data-citipo-customevent-event-value="home-cta-secondary-click"
+           data-action="citipo-customevent#trigger"
            {% if secondary.openNewTab %}target="_blank" rel="noopener noreferrer"{% endif %}>
             {{ secondary.label }}
         </a>
