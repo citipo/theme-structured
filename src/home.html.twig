@@ -45,7 +45,11 @@
     <div class="home-blocks">
         {% for key, block in blocks %}
             {% if key != 0 or block.type != 'cta' %}
-                {{ block.content|raw }}
+                <div class="home-blocks-section home-blocks-section-{{ key }}">
+                    <div class="home-blocks-container">
+                        {{ block.content|raw }}
+                    </div>
+                </div>
             {% endif %}
         {% endfor %}
     </div>
